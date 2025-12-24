@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Custom theme variables for Tailwind v4 */
+@theme {
+  /* Colors */
+  --color-primary: #0069E1;
+  --color-primary-light: #E5F0FC;
+  
+  --color-text-primary: #2F3545;
+  --color-text-secondary: #070707;
+  --color-text-muted: #91959F;
+  --color-text-placeholder: #848995;
+  --color-text-light: rgba(7, 7, 7, 0.4);
+  --color-text-date: rgba(7, 7, 7, 0.6);
+  --color-text-pagination: #474C5A;
+  --color-text-like: #545C64;
+  
+  --color-surface-page: #FAFAFB;
+  --color-surface-white: #FFFFFF;
+  --color-surface-input: #F7F8FA;
+  --color-surface-avatar: #E3E4E9;
+  
+  --color-border: #E6E7EC;
+  --color-border-light: #EEF0F2;
+  
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-logo: 'Cal Sans', sans-serif;
+  
+  /* Spacing */
+  --spacing-sidebar: 227px;
+  --spacing-sidebar-collapsed: 60px;
+  
+  /* Border Radius */
+  --radius-card: 10px;
+  --radius-input: 8px;
+  
+  /* Shadows */
+  --shadow-dropdown: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Cal Sans font - using a fallback since it's a premium font */
+@font-face {
+  font-family: 'Cal Sans';
+  src: local('Cal Sans'), local('CalSans-SemiBold');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-surface-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #E6E7EC transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #E6E7EC;
+  border-radius: 3px;
+}
