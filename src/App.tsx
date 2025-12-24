@@ -1,10 +1,53 @@
 import './index.css';
 import { useState } from 'react';
-import { Typography, Card, ThumbsUpIcon } from '@/components/ui';
+import { Typography, ThumbsUpIcon, ChevronsLeftIcon, ChevronLeftIcon, ChevronRightIcon, ChevronsRightIcon } from '@/components/ui';
 import { Layout } from '@/components/layout';
 
 function App() {
   const [searchValue, setSearchValue] = useState('investigation');
+
+  const searchResults = [
+    {
+      id: 1,
+      title: 'What to look for in an Investigation',
+      breadcrumb: 'SERA Help > SERA User Guides > Safety Assurance - Investigations',
+      date: 'ASM February 25, 2013 at 1:42 AM',
+      description: 'Personnel, Property and activities are: reported and investigated have corrective actions initiated, and are recorded',
+      likes: 1,
+    },
+    {
+      id: 2,
+      title: 'Investigation Report Template',
+      breadcrumb: 'SERA Help > Templates > Investigations',
+      date: 'JKL March 15, 2014 at 9:30 AM',
+      description: 'Standard template for conducting and documenting safety investigations within the organization',
+      likes: 3,
+    },
+    {
+      id: 3,
+      title: 'Root Cause Analysis Methods',
+      breadcrumb: 'SERA Help > SERA User Guides > Safety Assurance',
+      date: 'RMN April 2, 2015 at 11:15 AM',
+      description: 'Overview of root cause analysis methodologies including 5 Whys, Fishbone diagrams, and fault tree analysis',
+      likes: 5,
+    },
+    {
+      id: 4,
+      title: 'Investigation Interview Techniques',
+      breadcrumb: 'SERA Help > SERA User Guides > Investigations',
+      date: 'PKS June 18, 2016 at 3:45 PM',
+      description: 'Best practices for conducting effective interviews during safety investigations',
+      likes: 2,
+    },
+    {
+      id: 5,
+      title: 'Corrective Action Tracking',
+      breadcrumb: 'SERA Help > SERA User Guides > Safety Assurance',
+      date: 'TLM August 10, 2017 at 2:20 PM',
+      description: 'Guidelines for tracking and monitoring corrective actions from safety investigations',
+      likes: 4,
+    },
+  ];
 
   return (
     <Layout
@@ -12,183 +55,118 @@ function App() {
       onSearchChange={setSearchValue}
     >
       {/* Main Content Area */}
-      <div className="p-[23px] flex flex-col gap-[23px]">
+      <div className="p-5.75 flex flex-col gap-5.75">
         {/* Results Header */}
-        <div className="flex items-center justify-between">
-          <Typography variant="body" color="muted">
-            Showing 8 results for "<span className="text-primary font-medium">{searchValue}</span>"
-          </Typography>
+        <div className="flex items-center gap-1.75 pl-0.75">
+          <h2 className="text-[18px] leading-[1.21] font-semibold text-text-primary tracking-[-0.01em]">
+            Showing 8 results for the "<span className='text-primary'>{searchValue}</span>"
+          </h2>
         </div>
 
-        {/* Search Results */}
-        <div className="flex flex-col gap-0">
-          {/* Result Card 1 */}
-          <Card hoverable className="py-[25px] px-[20px] rounded-none first:rounded-t-[10px] last:rounded-b-[10px]">
-            <div className="flex flex-col gap-[10px]">
-              <div className="flex flex-col gap-[6px]">
-                <div className="flex items-center justify-between gap-[6px]">
-                  <Typography variant="heading-md" className="text-primary flex-1">
-                    What to look for in an Investigation
-                  </Typography>
-                  <div className="flex items-center gap-[6px] shrink-0">
-                    <ThumbsUpIcon />
-                    <Typography variant="label" color="like">1</Typography>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between gap-[6px]">
-                  <Typography variant="body-sm" color="light" className="flex-1">
-                    SERA Help &gt; SERA User Guides &gt; Safety Assurance - Investigations
-                  </Typography>
-                  <Typography variant="body-sm" color="date" className="shrink-0">
-                    ASM February 25, 2013 at 1:42 AM
-                  </Typography>
-                </div>
-              </div>
-              <Typography variant="body" color="secondary">
-                Personnel, Property and activities are: reported and investigated have corrective actions initiated, and are recorded
-              </Typography>
-            </div>
-          </Card>
-
-          {/* Result Card 2 */}
-          <Card hoverable className="py-[25px] px-[20px] rounded-none first:rounded-t-[10px] last:rounded-b-[10px]">
-            <div className="flex flex-col gap-[10px]">
-              <div className="flex flex-col gap-[6px]">
-                <div className="flex items-center justify-between gap-[6px]">
-                  <Typography variant="heading-md" className="text-primary flex-1">
-                    Investigation Report Template
-                  </Typography>
-                  <div className="flex items-center gap-[6px] shrink-0">
-                    <ThumbsUpIcon />
-                    <Typography variant="label" color="like">3</Typography>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between gap-[6px]">
-                  <Typography variant="body-sm" color="light" className="flex-1">
-                    SERA Help &gt; Templates &gt; Investigations
-                  </Typography>
-                  <Typography variant="body-sm" color="date" className="shrink-0">
-                    JKL March 15, 2014 at 9:30 AM
-                  </Typography>
-                </div>
-              </div>
-              <Typography variant="body" color="secondary">
-                Standard template for conducting and documenting safety investigations within the organization
-              </Typography>
-            </div>
-          </Card>
-
-          {/* Result Card 3 */}
-          <Card hoverable className="py-[25px] px-[20px] rounded-none first:rounded-t-[10px] last:rounded-b-[10px]">
-            <div className="flex flex-col gap-[10px]">
-              <div className="flex flex-col gap-[6px]">
-                <div className="flex items-center justify-between gap-[6px]">
-                  <Typography variant="heading-md" className="text-primary flex-1">
-                    Root Cause Analysis Methods
-                  </Typography>
-                  <div className="flex items-center gap-[6px] shrink-0">
-                    <ThumbsUpIcon />
-                    <Typography variant="label" color="like">5</Typography>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between gap-[6px]">
-                  <Typography variant="body-sm" color="light" className="flex-1">
-                    SERA Help &gt; SERA User Guides &gt; Safety Assurance
-                  </Typography>
-                  <Typography variant="body-sm" color="date" className="shrink-0">
-                    RMN April 2, 2015 at 11:15 AM
-                  </Typography>
-                </div>
-              </div>
-              <Typography variant="body" color="secondary">
-                Overview of root cause analysis methodologies including 5 Whys, Fishbone diagrams, and fault tree analysis
-              </Typography>
-            </div>
-          </Card>
-
-          {/* Result Card 4 */}
-          <Card hoverable className="py-[25px] px-[20px] rounded-none first:rounded-t-[10px] last:rounded-b-[10px]">
-            <div className="flex flex-col gap-[10px]">
-              <div className="flex flex-col gap-[6px]">
-                <div className="flex items-center justify-between gap-[6px]">
-                  <Typography variant="heading-md" className="text-primary flex-1">
-                    Investigation Interview Techniques
-                  </Typography>
-                  <div className="flex items-center gap-[6px] shrink-0">
-                    <ThumbsUpIcon />
-                    <Typography variant="label" color="like">2</Typography>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between gap-[6px]">
-                  <Typography variant="body-sm" color="light" className="flex-1">
-                    SERA Help &gt; SERA User Guides &gt; Investigations
-                  </Typography>
-                  <Typography variant="body-sm" color="date" className="shrink-0">
-                    PKS June 18, 2016 at 3:45 PM
-                  </Typography>
-                </div>
-              </div>
-              <Typography variant="body" color="secondary">
-                Best practices for conducting effective interviews during safety investigations
-              </Typography>
-            </div>
-          </Card>
-        </div>
-
-        {/* Pagination */}
-        <div className="flex items-center justify-between py-[16px]">
-          {/* Page Navigation */}
-          <div className="flex items-center gap-[8px]">
-            <button className="px-[12px] py-[8px] bg-surface-input border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer">
-              ««
-            </button>
-            <button className="px-[12px] py-[8px] bg-surface-input border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer">
-              «
-            </button>
-            <span className="px-[12px] py-[8px] text-[14px] text-text-primary">
-              1/9
-            </span>
-            <button className="px-[12px] py-[8px] bg-surface-input border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer">
-              »
-            </button>
-            <button className="px-[12px] py-[8px] bg-surface-input border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer">
-              »»
-            </button>
-          </div>
-
-          {/* Page Numbers */}
-          <div className="flex items-center gap-[4px]">
-            <button className="px-[12px] py-[8px] bg-primary text-white rounded-[8px] text-[14px] font-medium cursor-pointer">
-              1
-            </button>
-            <button className="px-[12px] py-[8px] bg-surface-input border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer">
-              2
-            </button>
-            <button className="px-[12px] py-[8px] bg-surface-input border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer">
-              3
-            </button>
-            <button className="px-[12px] py-[8px] bg-surface-input border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer">
-              4
-            </button>
-            <button className="px-[12px] py-[8px] bg-surface-input border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer">
-              5
-            </button>
-            <span className="px-[8px] text-[14px] text-text-muted">...</span>
-            <button className="px-[12px] py-[8px] bg-surface-input border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer">
-              9
-            </button>
-          </div>
-
-          {/* Rows per page */}
-          <div className="flex items-center gap-[8px]">
-            <Typography variant="body-sm" color="muted">
-              Rows per page
+        {/* Search Results Container */}
+        <div className="flex flex-col border border-border rounded-card overflow-hidden">
+          {/* Top Articles Results Header */}
+          <div className="bg-surface-white py-3.75 px-5 border-b border-border text-center">
+            <Typography variant="label" color="secondary" className="font-medium">
+              Top Articles Results
             </Typography>
-            <select className="px-[12px] py-[8px] bg-surface-input border border-border-light rounded-[8px] text-[14px] text-text-primary cursor-pointer">
-              <option>20</option>
-              <option>50</option>
-              <option>100</option>
-            </select>
+          </div>
+
+          {/* Search Result Items */}
+          {searchResults.map((result, index) => (
+            <div
+              key={result.id}
+              className={`bg-surface-white py-6.25 px-5 border-b border-border cursor-pointer hover:bg-primary-light transition-colors duration-150 ${
+                index === 2 ? 'bg-primary-light' : ''
+              }`}
+            >
+              <div className="flex flex-col gap-2.5">
+                <div className="flex flex-col gap-1.5">
+                  <div className="flex items-center gap-1.5">
+                    <h3 className="text-[17px] leading-[1.21] font-semibold text-primary flex-1">
+                      {result.title}
+                    </h3>
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      <ThumbsUpIcon />
+                      <span className="text-[14px] leading-[1.21] font-medium text-text-like">
+                        {result.likes}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <p className="text-[14px] leading-[1.21] font-normal text-text-light flex-1">
+                      {result.breadcrumb}
+                    </p>
+                    <p className="text-[14px] leading-[1.21] font-normal text-text-date shrink-0">
+                      {result.date}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-[15px] leading-[1.21] font-normal text-text-secondary">
+                  {result.description}
+                </p>
+              </div>
+            </div>
+          ))}
+
+          {/* Pagination - Inside the container */}
+          <div className="bg-surface-white py-4.25 px-4.25 border-t border-border-light rounded-b-[8px]">
+            <div className="flex items-center gap-1.5">
+              {/* Navigation Buttons */}
+              <div className="flex items-center gap-1.5">
+                <button className="h-8.5 px-3.75 bg-[#F9F9FC] border border-border-light rounded-[8px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer flex items-center justify-center">
+                  <ChevronsLeftIcon size={8} />
+                </button>
+                <button className="h-8.5 px-3.75 bg-[#F9F9FC] border border-border-light rounded-[8px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer flex items-center justify-center">
+                  <ChevronLeftIcon size={8} />
+                </button>
+                <div className="w-14.75 h-8.5 px-2.5 py-1.75 bg-[#F9F9FC] border border-border-light rounded-[8px] text-[12px] text-[#04070D] flex items-center justify-center">
+                  1/9
+                </div>
+                <button className="h-8.5 px-3.75 bg-[#F9F9FC] border border-border-light rounded-[8px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer flex items-center justify-center">
+                  <ChevronRightIcon size={8} />
+                </button>
+                <button className="h-8.5 px-3.75 bg-[#F9F9FC] border border-border-light rounded-[8px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer flex items-center justify-center">
+                  <ChevronsRightIcon size={8} />
+                </button>
+              </div>
+
+              {/* Page Numbers */}
+              <div className="flex items-center gap-1.5">
+                <button className="w-9.75 h-8.5 px-2.5 py-2.25 bg-[#F9F9FC] border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer flex items-center justify-center">
+                  1
+                </button>
+                <button className="w-9.75 h-8.5 px-2.5 py-2.25 bg-[#F9F9FC] border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer flex items-center justify-center">
+                  2
+                </button>
+                <button className="w-9.75 h-8.5 px-2.5 py-2.25 bg-primary text-white rounded-[8px] text-[14px] cursor-pointer flex items-center justify-center">
+                  3
+                </button>
+                <button className="w-9.75 h-8.5 px-2.5 py-2.25 bg-[#F9F9FC] border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer flex items-center justify-center">
+                  4
+                </button>
+                <button className="w-9.75 h-8.5 px-2.5 py-2.25 bg-[#F9F9FC] border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer flex items-center justify-center">
+                  5
+                </button>
+                <div className="w-9.75 h-8.5 px-2.5 py-2.25 bg-[#F9F9FC] border border-border-light rounded-[8px] text-[14px] text-text-pagination flex items-center justify-center">
+                  ...
+                </div>
+                <button className="w-9.75 h-8.5 px-2.5 py-2.25 bg-[#F9F9FC] border border-border-light rounded-[8px] text-[14px] text-text-pagination hover:bg-[#eef0f2] transition-colors cursor-pointer flex items-center justify-center">
+                  9
+                </button>
+              </div>
+
+              {/* Spacer */}
+              <div className="flex-1" />
+
+              {/* Rows per page */}
+              {/* <span className="text-[14px] leading-[1.21] font-normal text-text-pagination">
+                Rows per page
+              </span>
+              <div className="w-14.75 h-8.5 px-2.5 py-1.75 bg-[#F9F9FC] border border-border-light rounded-[8px] flex items-center justify-center">
+                <span className="text-[12px] leading-[1.21] font-normal text-[#04070D]">20</span>
+              </div> */}
+            </div>
           </div>
         </div>
       </div>
