@@ -19,9 +19,9 @@ interface HeaderProps {
 
 export function Header({ searchValue = '', onSearchChange, onSearchFocus }: HeaderProps) {
   return (
-    <header className="flex items-center gap-[9px] px-[24px] py-[18px] bg-surface-white border-b border-border">
+    <header className="flex items-center gap-2.25 px-6 py-4.5 bg-surface-white border-b border-border">
       {/* Search Bar */}
-      <div className="w-[203px]">
+      <div className="w-50.75">
         <Input
           leftIcon={<SearchIcon />}
           placeholder="Search Here"
@@ -36,14 +36,14 @@ export function Header({ searchValue = '', onSearchChange, onSearchFocus }: Head
       <div className="flex-1" />
 
       {/* Right Icons */}
-      <div className="flex items-center gap-[20px]">
+      <div className="flex items-center gap-5">
         {/* Notification Bell */}
-        <button className="p-[4px] hover:bg-primary-light rounded-full transition-colors cursor-pointer">
+        <button className="p-1 hover:bg-primary-light rounded-full transition-colors cursor-pointer">
           <BellIcon />
         </button>
 
         {/* Settings/Question */}
-        <button className="p-[4px] hover:bg-primary-light rounded-full transition-colors cursor-pointer">
+        <button className="p-1 hover:bg-primary-light rounded-full transition-colors cursor-pointer">
           <SettingsIcon />
         </button>
 

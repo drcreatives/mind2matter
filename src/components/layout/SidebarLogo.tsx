@@ -29,7 +29,7 @@ export function SidebarLogo({ isCollapsed = false, onToggleCollapse }: SidebarLo
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={onToggleCollapse}
-        className="cursor-pointer flex-shrink-0"
+        className="cursor-pointer shrink-0"
         aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
       >
         <motion.div

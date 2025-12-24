@@ -38,7 +38,7 @@ export function Sidebar({ activeItem = 'assurance', onItemClick, isCollapsed = f
   return (
     <aside 
       className={`h-full bg-surface-white border-r border-border flex flex-col transition-all duration-300 ease-in-out ${
-        isCollapsed ? 'w-[72px]' : 'w-sidebar'
+        isCollapsed ? 'w-18' : 'w-sidebar'
       }`}
     >
       {/* Logo */}
