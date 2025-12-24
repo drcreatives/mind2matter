@@ -276,19 +276,19 @@ function App() {
                       onClick={() => handlePageChange(1)}
                       disabled={currentPage === 1}
                       className={`h-8.5 px-3.75 bg-[#F9F9FC] border border-border-light rounded-[8px] transition-colors flex items-center justify-center ${
-                        currentPage === 1 ? 'opacity-40 cursor-not-allowed' : 'hover:bg-[#eef0f2] cursor-pointer text-text-pagination'
+                        currentPage === 1 ? 'cursor-not-allowed' : 'hover:bg-[#eef0f2] cursor-pointer text-text-pagination'
                       }`}
                     >
-                      <ChevronsLeftIcon size={8} />
+                      <ChevronsLeftIcon size={8} disabled={currentPage === 1} />
                     </button>
                     <button 
                       onClick={() => handlePageChange(currentPage - 1)}
                       disabled={currentPage === 1}
                       className={`h-8.5 px-3.75 bg-[#F9F9FC] border border-border-light rounded-[8px] transition-colors flex items-center justify-center ${
-                        currentPage === 1 ? 'opacity-40 cursor-not-allowed' : 'hover:bg-[#eef0f2] cursor-pointer text-text-pagination'
+                        currentPage === 1 ? 'cursor-not-allowed' : 'hover:bg-[#eef0f2] cursor-pointer text-text-pagination'
                       }`}
                     >
-                      <ChevronLeftIcon size={8} />
+                      <ChevronLeftIcon size={8} disabled={currentPage === 1} />
                     </button>
                     <div className="w-14.75 h-8.5 px-2.5 py-1.75 bg-[#F9F9FC] border border-border-light rounded-[8px] text-[12px] text-[#04070D] flex items-center justify-center">
                       {currentPage}/{totalPages}
@@ -297,19 +297,19 @@ function App() {
                       onClick={() => handlePageChange(currentPage + 1)}
                       disabled={currentPage === totalPages}
                       className={`h-8.5 px-3.75 bg-[#F9F9FC] border border-border-light rounded-[8px] transition-colors flex items-center justify-center ${
-                        currentPage === totalPages ? 'opacity-40 cursor-not-allowed' : 'hover:bg-[#eef0f2] cursor-pointer text-text-pagination'
+                        currentPage === totalPages ? 'cursor-not-allowed' : 'hover:bg-[#eef0f2] cursor-pointer text-text-pagination'
                       }`}
                     >
-                      <ChevronRightIcon size={8} />
+                      <ChevronRightIcon size={8} disabled={currentPage === totalPages} />
                     </button>
                     <button 
                       onClick={() => handlePageChange(totalPages)}
                       disabled={currentPage === totalPages}
                       className={`h-8.5 px-3.75 bg-[#F9F9FC] border border-border-light rounded-[8px] transition-colors flex items-center justify-center ${
-                        currentPage === totalPages ? 'opacity-40 cursor-not-allowed' : 'hover:bg-[#eef0f2] cursor-pointer text-text-pagination'
+                        currentPage === totalPages ? 'cursor-not-allowed' : 'hover:bg-[#eef0f2] cursor-pointer text-text-pagination'
                       }`}
                     >
-                      <ChevronsRightIcon size={8} />
+                      <ChevronsRightIcon size={8} disabled={currentPage === totalPages} />
                     </button>
                   </div>
 
